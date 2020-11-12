@@ -18,12 +18,12 @@ from sklearn.model_selection import GridSearchCV
 
 def load_data(database_filepath):
     '''
-    Load data from database as dataframe
+    Loading database file from database filepath
     Input:
         database_filepath: File path of sql database
     Output:
-        X: Message data (features)
-        Y: Categories (target)
+        X: Message data 
+        Y: Categories 
         category_names: Labels for 36 categories
     '''
     engine = create_engine('sqlite:///' + database_filepath)
@@ -37,7 +37,7 @@ def load_data(database_filepath):
 
 def tokenize(text):
     '''
-    Tokenize and clean text
+    Cleaning and Tokenizing the text
     Input:
         text: original message text
     Output:
@@ -100,7 +100,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 def save_model(model, model_filepath):
     '''
-    Save model as a pickle file 
+    Saving as a pickle file 
     Input: 
         model: Model to be saved
         model_filepath: path of the output pick file
